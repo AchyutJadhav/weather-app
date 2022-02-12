@@ -58,13 +58,13 @@ def search_location():
             wind_speed_text.config(text=f"Wind Speed: {wind_speed_value} m/s")
 
             sunrise = time.ctime(int(response.json()['sys']['sunrise']))
-            sunrise_time = sunrise.split(" ")[4]
+            sunrise_time = sunrise.split(" ")[3]
             d = datetime.strptime(sunrise_time, "%H:%M:%S")
             time_in_12 = d.strftime("%I:%M:%S %p")
             sunrise_text.config(text=f"Sunrise: {time_in_12}")
 
             sunset = time.ctime(int(response.json()['sys']['sunset']))
-            sunset_time = sunset.split(" ")[4]
+            sunset_time = sunset.split(" ")[3]
             sunset_d = datetime.strptime(sunset_time, "%H:%M:%S")
             sunset_time_in_12 = sunset_d.strftime("%I:%M:%S %p")
             sunset_text.config(text=f"Sunset: {sunset_time_in_12}")
